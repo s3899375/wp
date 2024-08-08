@@ -1,0 +1,15 @@
+header h2 {
+    color: rgb(98, 14, 255);
+    font-size: 36pt;
+    font-weight: bold;
+    font-style: italic;
+    font-family: arial;
+    max-width: 20pt;
+}
+
+main p {
+    color: purple;
+    font-size: 20pt;
+    font-family: verdana;
+    max-width: 200pt;
+}
