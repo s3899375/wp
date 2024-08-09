@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+#box1index {
+    background-color: rgb(12, 128, 128);
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 15px 15px;;
+}
+#box2index {
+    background-color: rgb(253, 250, 236);
+    flex-grow: 1;
+}
+#footerindex {
+    background-color: rgb(229, 127, 61);
+    padding: 10px;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
