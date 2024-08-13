@@ -35,6 +35,11 @@
     </div>
     
     <div id="box2index">
+        <div class="HeadingAddPetDiv">
+            <h2 class="subheadingaddpet">Add a pet</h2>
+            
+            <p class="addDescriptionheading">You can add a new pet here</p>
+        </div>
         <div id="petadd">
             <form>
                 <label for="petName">Pet Name:</label>
@@ -43,9 +48,11 @@
                 <label for="petType">Type:</label>
                 <select id="petType" class="add-pet"></select><br>
               
-                <label for="petDescription">Description:</label>
-                <input type="text" id="petDescription" placeholder="Describe the pet briefly" class="PetAddDescription"><br>
 
+                <label for="petDescription">Description:</label>
+                <textarea id="petDescription" class="description-box" placeholder="Describe the pet briefly"></textarea>
+
+                
                 <label for="imageUpload">Select a Picture:</label>
                 <input type="file" id="imageUpload" accept="image/*">
                 <br>
