@@ -4,16 +4,33 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Ysabeau SC', sans-serif;
 }
 #box1index {
     background-color: rgb(12, 128, 128);
     margin: 0;
-    padding: 0;
-    border-radius: 0 0 15px 15px;;
+    padding: 10px;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 #box2index {
     background-color: rgb(253, 250, 236);
     flex-grow: 1;
+    position: relative; /* Make the container position relative */
+    padding: 10px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+#main-image {
+    float: right;
+    width: 50vw;
+    height: auto;
+    max-width: 650px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-right: 30px;
 }
 #footerindex {
     background-color: rgb(229, 127, 61);
@@ -21,3 +38,139 @@ body {
     text-align: center;
     border-radius: 15px 15px 0 0;
 }
+.NAV-container {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+.nav-select {
+    padding: 5px; 
+    width: 170px;
+    height: 45px;
+    border-radius: 5px;
+}
+.home-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+.home-button img {
+    height: 54px; 
+    width: auto;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+}
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    width: 170px;
+    height: 20px;
+    outline: none;
+}
+.search-button {
+    border: none; 
+    background: none; 
+    padding: 2px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+/* Heading fonts */
+h1.home-page {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 6vw;
+    float: left; 
+    padding-top: 40px;
+    margin: 0;
+    color: rgb(229, 127, 61);
+    text-align: center; /* Center the text */
+}
+h2.homepagetext {
+    font-size: 6vw;
+    float: left;
+
+    color: rgb(12, 128, 128);
+}
+/* Heading fonts for other headings */
+h2, h3, h4, h5, h6 {
+    font-family: 'Poetsen One', sans-serif;
+}
+/* Material icons usage */
+.material-icons {
+    font-family: 'Material Icons';
+    font-size: 24px; /* Adjust size as needed */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    #main-image {
+        width: 40vw; /* Adjust image size on smaller screens */
+        margin-right: 20px;
+    }
+
+    .home-button img {
+        height: 40px; /* Adjust logo size on smaller screens */
+    }
+
+    .nav-select {
+        width: 150px; /* Adjust select box size on smaller screens */
+    }
+}
+
+/* index.html css part*/
+
+
+.centered-text {
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 30px;
+}
+
+.petssubhead{
+    text-align: center;
+    font-size: 22;
+}
+
+.petsimage{
+    float: left;
+}
+
+#pet-table {
+    width: 100%;
+    border-collapse: separate;
+    font-family: 'Ysabeau SC', sans-serif;
+    float: right;
+    width: 850px;
+    border: 2px solid black;
+    height: 7px;
+}
+
+#pet-table thead {
+    background-color: #f7f7f7;
+}
+
+#pet-table th {
+    border: none;
+    padding: 12px 15px; /* Increased padding for more space within cells */
+    text-align: left;
+}
+
+#pet-table td {
+    padding: 9px 7px;
+}
+
+#pet-table th {
+    color: #1B9C85; /* Match the header color from the image */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#pet-table td {
+    color: #0f1314; /* Darker text color for table data */
+}
+
+
