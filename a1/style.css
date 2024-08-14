@@ -1,5 +1,7 @@
 body {
-    margin: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* This centers the body */
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -7,6 +9,7 @@ body {
     font-family: 'Ysabeau SC', sans-serif;
 }
 #box1 {
+    width: 100%;
     background-color: rgb(12, 128, 128);
     margin: 0;
     padding: 10px;
@@ -15,29 +18,23 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-#box2index {
-    background-color: rgb(253, 250, 236);
+#box2blackgroundframe {
+    background-color: rgb(255, 255, 255);
     flex-grow: 1;
     position: relative; /* Make the container position relative */
     padding: 10px;
     box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
-#main-image {
-    float: right;
-    width: 50vw;
-    height: auto;
-    max-width: 650px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin-right: 30px;
-}
+
 #footerindex {
+    width: 100%;
     background-color: rgb(229, 127, 61);
     padding: 10px;
+    max-width: 1200px;
     text-align: center;
     border-radius: 15px 15px 0 0;
 }
+
 .NAV-container {
     display: flex;
     align-items: center; 
@@ -80,10 +77,31 @@ body {
     align-items: center; 
     justify-content: center; 
 }
+
+/*frame of the webpages*/
+
+.indexpage #box2blackgroundframe {
+    background-color: rgb(253, 250, 236);
+}
+
+#main-image {
+    float: right;
+    width: 27vw;
+    height: auto;
+    max-width: 650px;
+    border-radius: 50%;
+    margin-top: 50px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+
 /* Heading fonts */
 h1.home-page {
     font-family: 'Permanent Marker', cursive;
-    font-size: 6vw;
+    font-size: 4.7vw;
     float: left; 
     padding-top: 40px;
     margin: 0;
@@ -91,11 +109,11 @@ h1.home-page {
     text-align: center; /* Center the text */
 }
 h2.homepagetext {
-    font-size: 6vw;
+    font-size: 4vw;
     float: left;
-
     color: rgb(12, 128, 128);
 }
+
 /* Heading fonts for other headings */
 h2, h3, h4, h5, h6 {
     font-family: 'Poetsen One', sans-serif;
@@ -106,7 +124,7 @@ h2, h3, h4, h5, h6 {
     font-size: 24px; /* Adjust size as needed */
 }
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 762px) {
     #main-image {
         width: 40vw; /* Adjust image size on smaller screens */
         margin-right: 20px;
@@ -183,6 +201,7 @@ h2, h3, h4, h5, h6 {
     justify-content: center; /* Center items vertically within the div */
     align-items: center; /* Center items horizontally within the div */
     height: 30px; /* Adjust height as needed */
+    /*this is the box that centers everything in the webpage*/
 }
 
 .subheadingaddpet {
@@ -210,6 +229,7 @@ h2, h3, h4, h5, h6 {
 }
 
 #petadd input[type="text"], #petadd select{
+    max-width: 100%;
     width: 100%; /* Make input fields and select boxes full width */
     padding: 15px;
     margin-bottom: 20px; /* Add space between each input box */
@@ -250,3 +270,117 @@ h2, h3, h4, h5, h6 {
 }
 
 
+
+.gallery-page #box2index {
+    background-color: rgb(255, 254, 254); /* Change this to the desired background color */
+}
+.Gallery-Container {
+    text-align: center; 
+    margin: 0 auto;
+}
+
+    /* this is the box that is outside the petcontainer it centers the .petcontainer and the subheadings and descriptions */
+
+.Gallery-Container h2 {
+    font-family: 'Ysabeau SC', sans-serif; /* Replace with the desired font */
+    font-size: 24px;
+    margin: 20px 0;
+}
+.Gallery-Container p {
+    font-family: 'Ysabeau SC', sans-serif; /* Replace with the desired font */
+    font-size: 16px;
+    margin: 10px 0 20px;
+}
+/*these two are gallery texts and fonts above the gallery of pets avaliable*/
+
+.petcontainer {
+    
+    width: 1000px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Organizes the images */
+    margin: 0 auto; /* Centers the pet container */
+}
+
+    /* this is the box that organises the images its inside of .gallarycontainer */
+    .image-container {
+        position: relative; /* Ensure child elements are positioned relative to this container */
+        max-width: 50%;
+        width: 320px; 
+        border-radius: 10px; 
+        overflow: hidden; /* Ensures the image fits within the container */
+        text-align: center; /* Centers the text horizontally */
+        border: 1px solid #a1b9be;
+        margin: 5px;
+        box-sizing: border-box;
+        display: flex; /* Enables Flexbox layout */
+        flex-direction: column; /* Stacks children vertically */
+        justify-content: flex-end; /* Aligns children to the bottom */
+    }
+    
+    .image-container img {
+        width: 100%;
+        height: auto; /* Ensures the image maintains its aspect ratio */
+        display: block; /* Removes the gap under the image */
+        transition: filter 0.3s ease; /* Smooth transition for grayscale effect */
+    }
+    
+    /* Style for the name-box */
+    .name-box {
+        background-color: #ffffff; /* Light gray background for the name box */
+        padding: 10px;
+        font-family: 'Ysabeau SC', sans-serif; /* Replace with the desired font */
+        font-size: 18px;
+        font-weight: bold;
+        position: relative; /* Ensure the name-box is positioned relative to the container */
+        z-index: 2; /* Ensure name-box stays on top of the overlay */
+    }
+
+    /* Style for the overlay */
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(151, 151, 151, 0.6); /* Dark overlay with opacity */
+        color: rgb(24, 24, 24);
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center children horizontally */
+        justify-content: center; /* Center children vertically */
+        opacity: 0;
+        transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+        font-family: 'Ysabeau SC', sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    
+    .overlay .overlay-text {
+        color: rgb(51, 51, 51); /* Text color */
+        text-decoration: underline; /* Underline the text */
+    }
+
+    .overlay-icon {
+        width: 20px; /* Adjust size as needed */
+        height: 20px; /* Adjust size as needed */
+        max-width: 20px;
+        max-height: 20px;
+        margin-bottom: 1px; /* Space between icon and text */
+    }
+    
+    
+    /* Hover effect */
+    .image-container:hover img {
+        filter: grayscale(100%); /* Greys out the image */
+    }
+    
+    .image-container:hover .overlay {
+        opacity: 1; /* Shows the overlay on hover */
+    }
+
+
+    
+    
+/*this is the pets name box*/
