@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Array of Numbers</title>
+	<meta charset=UTF-8>
+	<script>
+		
+	</script>
+</head>
+
+<body>
+	<h1>Prime Numbers checker</h1>
+    <form>
+        <label>em    <script>
+            function checkPrime() {
+                console.log("checkprime");
+                let prime = document.getElementById("prime");
+                let primeValue = Number(prime.value);
+                let status = document.getElementById("status");
+                status.innerHTML = "";
+                console.log(primeValue);
+                console.log(typeof primeValue);
+                if (typeof primeValue != "number") {
+                    status.innerHTML = "This needs to be an integer";
+                    return;
+                }
+                if (primeValue < 2) {
+                    status.innerHTML = "This needs to be 2 or more";
+                    return;
+                }
+                if (primeValue == 2) {
+                    status.innerHTML = "Prime!";
+                    return;
+                }
+                for (let p = 2; p < primeValue; ++p) {
+                    // Code here
+                    if (primeValue % p == 0){
+                        status.innerHTML = "" +p;
+                        return
+                    }
+                }
+            }
+        </script>ter a postivie integer</label><input>
+    </form>
+</body>
+
+</html>
