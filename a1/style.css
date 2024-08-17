@@ -99,14 +99,14 @@
 
     #main-image {
         float: right;
-        width: 27vw;
+        width: 30vw;
         height: auto;
         max-width: 650px;
         border-radius: 50%;
         margin-top: 60px;
         object-fit: cover;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        margin-right: 30px;
+        box-shadow: 0 4px 8px rgba(110, 109, 109, 0.3);
+        margin-right: 80px;
         margin-bottom: 30px;
     }
 
@@ -116,11 +116,12 @@
         font-size: 4.1vw;
         float: left; 
         margin-top: 100px;
-        
+        margin-left: 20px;
         color: rgb(229, 127, 61);
         text-align: center; /* Center the text */
     }
     h2.homepagetext {
+        margin-left: 20px;
         font-size: 3.5vw;
         float: left;
         color: rgb(12, 128, 128);
@@ -172,7 +173,7 @@
         flex: 1; /* Allows table to scale proportionally */
         border-collapse: collapse; /* Makes table borders collapse */
         font-family: 'Ysabeau SC', sans-serif;
-        border: 2px solid black;
+        border: 2px solid rgb(0, 0, 0);
         box-sizing: border-box; /* Ensures border and padding are included in width */
         margin-top: 40px;
     }
@@ -183,7 +184,11 @@
     }
 
     #pet-table th {
-        background-color: #f2f2f2;
+        background-color: rgb(255, 247, 212);
+    }
+
+    #pettabletext {
+        background-color: #008080;
     }
 
     @media (max-width: 768px) {
