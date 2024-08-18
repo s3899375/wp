@@ -11,7 +11,7 @@ function doMenu() {
     const urlMappings = {
         'home': 'index.html',
         'pets': 'pets.html',
-        'add-pet': 'add.html',
+        'addpet': 'add.html',
         'gallery': 'gallery.html'
     };
     
@@ -26,6 +26,16 @@ function doMenu() {
         }
     }
 }
+
+// code generated in chatgpt \/\/\/\/\/ 
+function navigatePage() {
+    const selectElement = document.querySelector('.nav-select');
+    const selectedValue = selectElement.value;
+    if (selectedValue) {
+        window.location.href = selectedValue;
+    }
+}
+
 
 // Attach event listener to the select element once the document is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
