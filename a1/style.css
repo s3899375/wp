@@ -421,6 +421,15 @@
 
     /*add.html /\/\/\/\/\/\/\*/
 
+
+    label.required::after {
+        content: "*";
+        color: red;
+        margin-left: 10px;
+    }
+    /*this is the red * required icon */    
+
+
     .gallery-page #box2index {
         background-color: rgb(255, 254, 254); 
     }

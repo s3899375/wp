@@ -10,7 +10,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
-    <div id="box1">
+    
+    
+
+
+</head>
+<body>
+    
+    <header><div id="box1">
         <div class="NAV-container">
             
             <a href="index.html" class="home-link">
@@ -35,13 +42,7 @@
                 <span class="material-symbols-outlined">search</span> 
             </button>
         </div>        
-    </div>
-    
-
-
-</head>
-<body>
-    
+    </div></header>
     
     <div id="box2backgroundframe">
         <div class="HeadingAddPetDiv">
@@ -51,25 +52,25 @@
         </div>
         <div id="petadd">
             <form>
-                <label for="petName">Pet Name:</label>
+                <label for="petName" class="required">Pet Name:</label>
                 <input type="text" id="petName" placeholder="Provide a name for the pet" class="PetNameInput"><br>
-              
-                <label for="petType">Type:</label>
-                <select id="petType" class="add-pet"></select><br>
-              
-
-                <label for="petDescription">Description:</label>
-                <textarea id="petDescription" class="description-box" placeholder="Describe the pet briefly"></textarea>
-
                 
-                <label for="imageUpload">Select a Picture:</label>
-                <input type="file" id="imageUpload" accept="image/*">
-                <br>
-                <label for="imageCaption">Image Caption:</label>
+                <label for="petType" class="required">Type:</label>
+                <select id="petType" class="add-pet"></select><br>
+                
+                <label for="petDescription" class="required">Description:</label>
+                <textarea id="petDescription" class="description-box" placeholder="Describe the pet briefly"></textarea><br>
+                
+                <label for="imageUpload" class="required">Select a Picture:</label>
+                <input type="file" id="imageUpload" accept="image/*"><br>
+                
+                <label for="imageCaption" class="required">Image Caption:</label>
                 <input type="text" id="imageCaption" placeholder="Describe the image in one word" class="ImageCaption"><br>
-                <label for="petAge">Age (months):</label>
+                
+                <label for="petAge" class="required">Age (months):</label>
                 <input type="text" id="petAge" placeholder="Age of a pet in months" class="PetAge"><br>
-                <label for="petLocation">Location:</label>
+                
+                <label for="petLocation" class="required">Location:</label>
                 <input type="text" id="petLocation" placeholder="Location of the pet" class="PetLocation">
                 
                 
