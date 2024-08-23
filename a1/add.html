@@ -57,7 +57,10 @@
                 <input type="text" id="petName" placeholder="Provide a name for the pet" class="PetNameInput"><br>
                 
                 <label for="petType" class="required">Type:</label>
-                <select id="petType" class="add-pet"></select><br>
+                <select id="petType" class="add-pet">
+                    <option value="" disabled selected>Select an option</option>
+                </select><br>
+                
                 
                 <label for="petDescription" class="required">Description:</label>
                 <textarea id="petDescription" class="description-box" placeholder="Describe the pet briefly"></textarea><br>
@@ -77,7 +80,7 @@
                 
                 <div class="AddButtonsDiv">
                     <button type="button" class="submit">
-                        <span class="material-symbols-outlined">check_circle</span>Submit
+                        <span class="material-symbols-outlined">Add_task</span>Submit
                     </button>
                     
                     <button type="button" class="clear">
