@@ -37,7 +37,7 @@ $result = $conn->query($sql);
                     </div>
                 </div>
               </a>";
-        
+                
             }
         } else {
             echo "No pets found!";
