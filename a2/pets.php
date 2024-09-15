@@ -1,11 +1,10 @@
 <?php
 include('includes/header.inc');
 include('includes/nav.inc'); 
-
-// Connect to the database
 include('includes/db_connect.inc');
 
-$sql = "SELECT petname, type, age, location FROM pets";
+// Fetch pet data including the pet's unique ID
+$sql = "SELECT petid, petname, type, age, location FROM pets";
 $result = $conn->query($sql);
 ?>
 
@@ -30,11 +29,19 @@ $result = $conn->query($sql);
                 <?php
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
+                        // Fetch pet information and create a hyperlink under the pet's name
+                        $petId = $row['petid'];
+                        $petName = htmlspecialchars($row['petname']);
+                        $petType = htmlspecialchars($row['type']);
+                        $petAge = htmlspecialchars($row['age']);
+                        $petLocation = htmlspecialchars($row['location']);
+
                         echo "<tr>";
-                        echo "<td>" . htmlspecialchars($row['petname']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['type']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['age']) . " months</td>";
-                        echo "<td>" . htmlspecialchars($row['location']) . "</td>";
+                        // Create a hyperlink to the details.php page for the pet
+                        echo "<td><a href='details.php?id=$petId'>$petName</a></td>";
+                        echo "<td>$petType</td>";
+                        echo "<td>$petAge months</td>";
+                        echo "<td>$petLocation</td>";
                         echo "</tr>";
                     }
                 } else {

@@ -227,6 +227,18 @@
     p.centered-text {
         text-align: center;
     }
+
+    /* Style for pet name links */
+    #pet-table a {
+        color: black; /* Make the hyperlink text black */
+
+    }
+
+    #pet-table a:hover {
+        color: #555; /* Optionally, change color on hover */
+        text-decoration: underline; /* Optionally, add underline on hover */
+    }
+
     /*pet.html /\/\/\/\ page*/
 
 
@@ -535,3 +547,50 @@
     
     
 /*this is the pets name box*/
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+#box2backgroundframe {
+    position: relative;
+    text-align: center; 
+}
+
+
+.DetailsImageDiv {
+    position: absolute;
+    top: 120px; 
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+.DetailsImageDiv img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+
+.pet-info {
+    margin-top: 200px;
+    text-align: center;
+}
+
+
+.info {
+    float: none;
+}
+
+
+.pet-name {
+    margin: 20px auto;
+}
+
+.pet-description {
+    margin: 20px auto;
+}
