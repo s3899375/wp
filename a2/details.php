@@ -1,49 +1,72 @@
 <?php
-
+$title = "Pet Details";
 include('includes/header.inc');
-?>
-<h1>Pet Details</h1>
-<?php
 include('includes/nav.inc');
 ?>
 
 <?php
-if (!empty($_GET['petid'])) {
+if (!empty($_GET['id'])) {
     include('includes/db_connect.inc');
 
-    $petid = $_GET['petid'];
+    $petid = $_GET['id'];
 
-    $sql = "SELECT * FROM pets WHERE petid = ?";  
-
+    $sql = "SELECT * FROM pets WHERE petid = ?";
     $stmt = $conn->prepare($sql);
-    
-    $stmt->bind_param("i", $id);
-
+    $stmt->bind_param("i", $petid);
     $stmt->execute();
-
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            print "<h2>{$row['petname']}</h2>";
-            print "<h3>Type: {$row['type']}</h3>";
-            print "<h4>Age: {$row['age']} months | Location: {$row['location']}</h4>";
-            print "<p>Description: {$row['description']}</p>";
+            echo "<div id='box3backgroundframe'>";
+
+            echo "<div class='DetailsImageDiv'>";
             if (!empty($row['image'])) {
-                echo "<div class='DetailsImageDiv'>";
                 echo "<img src='images/{$row['image']}' alt='{$row['petname']}'>";
-                echo "</div>";
             } else {
                 echo "<p>No image available for this pet.</p>";
             }
+            echo "</div>";
+
+            echo "<div class='pet-info'>";
+
+            echo "<div class='agediv'>";
+            echo "<span class='material-symbols-outlined'>alarm</span>";
+            echo "<p>{$row['age']} months</p>";
+            echo "</div>";
+
+            echo "<div class='petsdiv'>";
+            echo "<span class='material-symbols-outlined'>pets</span>";
+            echo "<p>{$row['type']}</p>";
+            echo "</div>";
+    
+
+    
+            echo "<div class='location'>";
+            echo "<span class='material-symbols-outlined'>location_on</span>";
+            echo "<p>{$row['location']}</p>";
+            echo "</div>";
+
+            echo "</div>";
+
+            echo "<div class='pet-name'>";
+            echo "<h2>{$row['petname']}</h2>";
+            echo "</div>";
+
+            echo "<div class='pet-description'>";
+            echo "<p>Description: {$row['description']}</p>";
+            echo "</div>";
+
+            echo "</div>";
+
+            $stmt->close();
+            $conn->close();
         }
     } else {
         echo "<p>No details found for this pet.</p>";
     }
-
-
-    $stmt->close();
-    $conn->close();
+} else {
+    echo "<p>No pet ID provided.</p>";
 }
 ?>
 

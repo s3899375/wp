@@ -4,7 +4,7 @@ include('includes/nav.inc');
 include('includes/db_connect.inc');  // Include the database connection
 
 // Fetch data from the database, including the pet ID
-$sql = "SELECT id, petname, image, description FROM pets";  // Adjust column names based on your DB structure
+$sql = "SELECT petid, petname, image, description FROM pets";  // Adjust column names based on your DB structure
 $result = $conn->query($sql);
 
 ?>
@@ -22,7 +22,7 @@ $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             // Loop through each row in the result set
             while($row = $result->fetch_assoc()) {
-                $petId = $row['id'];           // Pet ID from DB
+                $petId = $row['petid'];           // Pet ID from DB
                 $petName = $row['petname'];    // Pet name from DB
                 $petImage = $row['image'];     // Image filename from DB
                 $petDescription = $row['description']; // Description from DB
