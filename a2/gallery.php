@@ -18,26 +18,26 @@ $result = $conn->query($sql);
         <div class="petcontainer">
 
         <?php
-        // Check if there are results
+
         if ($result->num_rows > 0) {
-            // Loop through each row in the result set
             while($row = $result->fetch_assoc()) {
-                $petId = $row['petid'];           // Pet ID from DB
-                $petName = $row['petname'];    // Pet name from DB
-                $petImage = $row['image'];     // Image filename from DB
-                $petDescription = $row['description']; // Description from DB
+                $petId = $row['petid'];           
+                $petName = $row['petname'];    
+                $petImage = $row['image'];
+                $petDescription = $row['description']; 
                 
-                // Output the pet info as HTML with a link to details.php passing the pet ID
+                
                 echo "<a href='details.php?id=$petId'>
-                        <div class='image-container'>
-                            <img src='images/$petImage' alt='$petName'>
-                            <div class='name-box'>$petName</div>
-                            <div class='overlay'>
-                                <img src='images/search-icon.png' alt='Icon' class='overlay-icon'>
-                                <span class='overlay-text'>Discover More!</span>
-                            </div>
-                        </div>
-                      </a>";
+                <div class='image-container'>
+                    <img src='images/$petImage' alt='$petName'>
+                    <div class='name-box'><h3>$petName</h3></div>
+                    <div class='overlay'>
+                        <span class='material-symbols-outlined'>search</span>
+                        <span class='overlay-text'>Discover More!</span>
+                    </div>
+                </div>
+              </a>";
+        
             }
         } else {
             echo "No pets found!";

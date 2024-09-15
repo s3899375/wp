@@ -17,7 +17,7 @@
                 <option value="gallery.php">Gallery Page</option>
             </select>
             
-            <script src="main.js"></script>
+            <script src="js_folder/main.js"></script>
         </div>
         <div class="search-container">
             <input type="text" placeholder="Search" class="search-input">
