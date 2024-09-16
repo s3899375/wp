@@ -1,4 +1,5 @@
 <?php
+$title = "Add Pet";
 include('includes/header.inc');
 include('includes/nav.inc');
 ?>

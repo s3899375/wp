@@ -501,10 +501,15 @@ label.required::after {
 
 /* Style for the name-box */
 .name-box {
+    color: black;
+    max-height: 35px;
     background-color: #ffffff;
     padding: 10px;
     font-family: 'Ysabeau SC', sans-serif;
-    font-size: 18px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     position: relative;
     z-index: 2;
@@ -652,7 +657,7 @@ margin: 10px;
 
 .petsdiv .material-symbols-outlined {
 color: rgb(51, 51, 51);
-font-size: 28px;
+font-size: 48px;
 align-items: center;
 }
 
@@ -660,7 +665,7 @@ align-items: center;
 
 .agediv .material-symbols-outlined {
 color: rgb(51, 51, 51);
-font-size: 28px;
+font-size: 48px;
 align-items: center;
 }
 
@@ -672,7 +677,7 @@ flex-direction: column;
 text-align: center;
 color: #008080;
 font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-font-size: 28px;
+font-size: 40px;
 }
 
 .petsdiv, .agediv, .location {
