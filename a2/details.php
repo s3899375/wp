@@ -54,7 +54,7 @@ if (!empty($_GET['id'])) {
             echo "</div>";
 
             echo "<div class='pet-description'>";
-            echo "<p>Description: {$row['description']}</p>";
+            echo "<p>{$row['description']}</p>";
             echo "</div>";
 
             echo "</div>";
