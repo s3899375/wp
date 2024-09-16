@@ -556,17 +556,23 @@ label.required::after {
 
 
 .DetailsImageDiv {
+    justify-content: center;   /* Horizontally center */
+    align-items: center;       /* Vertically center */
     text-align: center; 
     margin-top: 30px; 
+    min-height: 250px;
+    max-height: 250px;
+    
 }
 
 .DetailsImageDiv img {
-    max-width: 400px; 
-    width: 50%;      
-    height: auto;     
-    display: block;   
-    margin: 0 auto;   
+      
+    width: auto;        
+    height: 250px;       
+    display: block;     
+    margin: 0 auto;     
 }
+
 
 
 
