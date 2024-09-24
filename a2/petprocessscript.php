@@ -33,7 +33,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssdsss", $petName, $petType, $petDescription, $petAge, $petLocation, $imageCaption, $image); // Changed here
 
 if ($stmt->execute()) {
-    header("Location: add.php?success=true");
+    header("Location: gallery.php?success=true");
     exit(0);
 } else {
     echo "An error has occurred: " . $stmt->error;
