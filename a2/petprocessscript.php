@@ -2,12 +2,10 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-
 function validateInput($str)
 {
     return trim(htmlspecialchars($str)); 
 }
-
 
 $petName = validateInput($_POST['petName']);
 $petType = validateInput($_POST['petType']);
@@ -32,17 +30,14 @@ include('includes/db_connect.inc');
 
 $sql = "INSERT INTO pets (petname, type, description, age, location, caption, image) VALUES (?,?,?,?,?,?,?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sssisss", $petName, $petType, $petDescription, $petAge, $petLocation, $imageCaption, $image);
-
+$stmt->bind_param("sssdsss", $petName, $petType, $petDescription, $petAge, $petLocation, $imageCaption, $image); // Changed here
 
 if ($stmt->execute()) {
-
     header("Location: add.php?success=true");
     exit(0);
 } else {
     echo "An error has occurred: " . $stmt->error;
 }
-
 
 $conn->close();
 ?>
