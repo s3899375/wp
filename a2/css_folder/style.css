@@ -656,7 +656,7 @@ margin: 10px;
 
 
 .petsdiv .material-symbols-outlined {
-color: rgb(51, 51, 51);
+color: #35454f;
 font-size: 48px;
 align-items: center;
 }
@@ -664,7 +664,7 @@ align-items: center;
 
 
 .agediv .material-symbols-outlined {
-color: rgb(51, 51, 51);
+color: #35454f;
 font-size: 48px;
 align-items: center;
 }
@@ -679,6 +679,23 @@ color: #008080;
 font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 font-size: 40px;
 }
+
+#error-message, #details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#error-message p {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+
 
 .petsdiv, .agediv, .location {
 width: 120px; 

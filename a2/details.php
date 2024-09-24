@@ -63,10 +63,11 @@ if (!empty($_GET['id'])) {
             $conn->close();
         }
     } else {
-        echo "<p>No details found for this pet.</p>";
+        echo "<div class='error-message'><p>No details found for this pet.</p></div>";
+        
     }
 } else {
-    echo "<p>No pet ID provided.</p>";
+    echo "<div class='error-message'><p>No pet ID provided.</p></div>";
 }
 ?>
 
