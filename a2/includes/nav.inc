@@ -8,14 +8,14 @@
                 </div>
             </a>
             
-    
-            <select class="nav-select" onchange="navigatePage()">
-                <option value="" disabled selected>Select an option</option>
-                <option value="index.php">Home Page</option>
-                <option value="pets.php">Pets Page</option>
-                <option value="add.php">Add a Pet Page</option>
-                <option value="gallery.php">Gallery Page</option>
-            </select>
+        <select class="nav-select">
+            <option value="" disabled selected>Select an option</option>
+            <option value="home">Home</option>
+            <option value="pets">Pets</option>
+            <option value="addpet">Add Pet</option>
+            <option value="gallery">Gallery</option>
+        </select>
+
             
             <script src="js_folder/main.js"></script>
         </div>

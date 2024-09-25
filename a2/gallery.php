@@ -31,7 +31,7 @@ $result = $conn->query($sql);
                 echo "<a href='details.php?id=$petId'>
                 <div class='image-container'>
                     <img src='images/$petImage' alt='$petName'>
-                    <div class='name-box'><p>$petName</p></div>
+                    <div class='name-box'><h2>$petName</h2></div>
                     <div class='overlay'>
                         <span class='material-symbols-outlined'>search</span>
                         <span class='overlay-text'>Discover More!</span>

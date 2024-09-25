@@ -24,7 +24,8 @@ include('includes/nav.inc');
             </select><br>
 
             <label for="petDescription" class="required">Description:</label>
-            <textarea id="petDescription" name="petDescription" class="description-box" placeholder="Describe the pet briefly" required></textarea><br>
+            <textarea id="petDescription" name="petDescription" class="description-box" placeholder="Describe the pet briefly" required oninput="autoResize(this)"></textarea><br>
+            <div id="descriptionError" style="display:none; color:red;">Description exceeds the maximum word limit of 300 words.</div>
 
             <label for="imageUpload" class="required">Select a Picture:</label>
             <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required><br>
@@ -34,7 +35,7 @@ include('includes/nav.inc');
 
             <label for="petAge" class="required">Age (months):</label>
             <input type="text" id="petAge" name="petAge" placeholder="Age of a pet in months" class="PetAge" required><br>
-
+           
             <label for="petLocation" class="required">Location:</label>
             <input type="text" id="petLocation" name="petLocation" placeholder="Location of the pet" class="PetLocation" required><br>
 

@@ -1,43 +1,82 @@
-// menu.js
-
 function doMenu() {
-    // Get the select element
     let menu = document.querySelector('.nav-select');
-    
-    // Get the selected value
     let url = menu.value;
     
-    // Define URL mappings for each option
+    console.log("Selected URL:", url);  
+
     const urlMappings = {
-        'home': 'index.html',
-        'pets': 'pets.html',
-        'addpet': 'add.html',
-        'gallery': 'gallery.html'
+        'home': 'index.php',
+        'pets': 'pets.php',
+        'addpet': 'add.php',
+        'gallery': 'gallery.php'
     };
-    
-    // Get the full URL from the mapping
+
     let fullUrl = urlMappings[url];
-    
+
     if (fullUrl) {
-        if (fullUrl.includes("http")) {
-            window.open(fullUrl); 
-        } else {
-            location.href = fullUrl;
-        }
-    }
-}
-
-// code generated in chatgpt \/\/\/\/\/ 
-function navigatePage() {
-    const selectElement = document.querySelector('.nav-select');
-    const selectedValue = selectElement.value;
-    if (selectedValue) {
-        window.location.href = selectedValue;
+        console.log("Navigating to:", fullUrl);  
+        location.href = fullUrl;  
     }
 }
 
 
-// Attach event listener to the select element once the document is fully loaded
+
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.nav-select').addEventListener('change', doMenu);
+    const selectElement = document.querySelector('.nav-select');
+    
+    if (selectElement) {
+        selectElement.addEventListener('change', doMenu);
+    }
+
+
+    const imageUpload = document.getElementById('imageUpload');
+    if (imageUpload) {
+        imageUpload.addEventListener('change', function() {
+            validateImageSize(this);
+        });
+    }
 });
+
+
+
+function validateDescription() {
+    const description = document.getElementById('petDescription').value;
+    const words = description.trim().split(/\s+/); 
+    const wordLimit = 300;
+
+    if (words.length > wordLimit) {
+        document.getElementById('descriptionError').style.display = 'block';
+        return false;
+    } else {
+        document.getElementById('descriptionError').style.display = 'none';
+        return true;
+    }
+}
+
+
+function validateImageSize(input) {
+    const file = input.files[0];
+    const imageError = document.getElementById('imageError'); 
+
+    if (file) {
+        const img = new Image();
+        img.src = URL.createObjectURL(file);
+        img.onload = function() {
+            if (img.width > 500) {
+                imageError.style.display = 'block'; 
+                input.value = ''; 
+            } else {
+                imageError.style.display = 'none'; 
+            }
+        };
+    }
+}
+
+
+function autoResize(textarea) {
+    textarea.style.height = 'auto'; 
+    textarea.style.height = `${Math.min(textarea.scrollHeight, 200)}px`; 
+}
+
+
+document.getElementById('petDescription').addEventListener('input', validateDescription);

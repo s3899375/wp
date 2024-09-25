@@ -308,6 +308,7 @@ p.centered-text {
 .description-box {
     width: 100%; 
     height: 50px; 
+    max-height: 300px;
     padding: 10px; 
     border: 1px solid #ccc; 
     border-radius: 4px; 
@@ -315,7 +316,20 @@ p.centered-text {
     resize: vertical; 
     font-size: 16px; 
     font-family: Arial, sans-serif; 
+    min-height: 50px;
 }
+
+
+
+.file-upload-container {
+    display: flex;
+    align-items: center; 
+}
+
+.file-upload-container small {
+    margin-left: 10px; 
+}
+
 
 
 /*clear button used in add.html*/ 
@@ -501,7 +515,7 @@ label.required::after {
 
 /* Style for the name-box */
 .name-box {
-    color: black;
+    color: #35454f;
     max-height: 35px;
     background-color: #ffffff;
     padding: 10px;
@@ -513,6 +527,12 @@ label.required::after {
     font-weight: bold;
     position: relative;
     z-index: 2;
+    text-decoration: none; 
+}
+
+.name-box p {
+    text-decoration: none; 
+    color: inherit; 
 }
 
 
@@ -593,6 +613,10 @@ label.required::after {
     margin-top: 20px;
     box-sizing: border-box; 
     text-align: center; 
+}
+
+.pet-name h2{
+    color: #35454f;;
 }
 
 #box3backgroundframe {
