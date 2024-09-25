@@ -3,7 +3,7 @@ $title = "Add Pet";
 include('includes/header.inc');
 include('includes/nav.inc');
 ?>
-
+<main>
 <div id="box2backgroundframe">
     <div class="SUBHeadingAddPetDiv">
         <h2 class="subheadingaddpet">Add a Pet</h2>
@@ -50,7 +50,7 @@ include('includes/nav.inc');
         </form>
     </div>
 </div>
-
+</main>
 <?php
 include('includes/footer.inc');
 ?>
