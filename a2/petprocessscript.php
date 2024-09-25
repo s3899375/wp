@@ -41,5 +41,3 @@ if ($stmt->execute()) {
 
 $conn->close();
 ?>
-</body>
-</html>

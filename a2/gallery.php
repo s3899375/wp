@@ -9,7 +9,7 @@ $sql = "SELECT petid, petname, image, description FROM pets";
 $result = $conn->query($sql);
 ?>
 
-<main>
+
     <body class="gallery-page">
     <div id="box2backgroundframe">
         <div class="Gallery-Container">
@@ -51,7 +51,7 @@ $result = $conn->query($sql);
         </div>
     </div>
     </body>
-</main>
+
     
 <?php
 include('includes/footer.inc'); 

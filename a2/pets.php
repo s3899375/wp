@@ -9,7 +9,7 @@ $sql = "SELECT petid, petname, type, age, location FROM pets";
 $result = $conn->query($sql);
 ?>
 
-<main>
+
 <div id="box2backgroundframe">
     <h2 class="petssubhead">Discover Pets Victoria</h2>
     <p class="centered-text">
@@ -54,7 +54,7 @@ $result = $conn->query($sql);
         </table>
     </div>
 </div>
-</main>
+
 
 <?php
 include('includes/footer.inc');
