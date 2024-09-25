@@ -1,9 +1,11 @@
 <?php
-$title = "Add Pet";
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+$title = "Add Pet"; // Set the title for the page
 include('includes/header.inc');
 include('includes/nav.inc');
 ?>
-<main>
+
 <div id="box2backgroundframe">
     <div class="SUBHeadingAddPetDiv">
         <h2 class="subheadingaddpet">Add a Pet</h2>
@@ -20,15 +22,15 @@ include('includes/nav.inc');
                 <option value="" disabled selected>Select an option</option>
                 <option value="Cat">Cat</option>
                 <option value="Dog">Dog</option>
-
             </select><br>
 
             <label for="petDescription" class="required">Description:</label>
             <textarea id="petDescription" name="petDescription" class="description-box" placeholder="Describe the pet briefly" required oninput="autoResize(this)"></textarea><br>
             <div id="descriptionError" style="display:none; color:red;">Description exceeds the maximum word limit of 300 words.</div>
-
-            <label for="imageUpload" class="required">Select a Picture:</label>
-            <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required><br>
+            <div class="file-upload-container">
+                <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required>
+                <small id="imageError" style="color: red; display: none;">MAX IMAGE SIZE: 500PX</small>
+            </div><br>
 
             <label for="imageCaption" class="required">Image Caption:</label>
             <input type="text" id="imageCaption" name="imageCaption" placeholder="Describe the image in one word" class="ImageCaption" required><br>
@@ -50,7 +52,10 @@ include('includes/nav.inc');
         </form>
     </div>
 </div>
-</main>
+
 <?php
 include('includes/footer.inc');
 ?>
+
+</body>
+</html>

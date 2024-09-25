@@ -41,7 +41,7 @@ body {
     width: 100%;
     background-color: rgb(229, 127, 61);
     padding: 10px;
-    max-width: 1200px;
+    
     text-align: center;
     border-radius: 15px 15px 0 0;
 }
@@ -320,10 +320,11 @@ p.centered-text {
 }
 
 
+/*clear button used in add.html*/ 
 
 .file-upload-container {
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 .file-upload-container small {
@@ -332,7 +333,6 @@ p.centered-text {
 
 
 
-/*clear button used in add.html*/ 
 .clear {
     border: none;
     position: relative;
@@ -458,7 +458,7 @@ label.required::after {
 .Gallery-Container {
     text-align: center; 
     margin: 0 auto;
-    max-width: 1200px; 
+    
 }
 
 /* this is the box that is outside the petcontainer it centers the .petcontainer and the subheadings and descriptions */
@@ -512,28 +512,30 @@ label.required::after {
     transition: filter 0.3s ease;
 }
 
-
-/* Style for the name-box */
 .name-box {
     color: #35454f;
     max-height: 35px;
     background-color: #ffffff;
     padding: 10px;
     font-family: 'Ysabeau SC', sans-serif;
-    font-size: 13px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
     position: relative;
     z-index: 2;
-    text-decoration: none; 
 }
 
-.name-box p {
-    text-decoration: none; 
-    color: inherit; 
+
+a.pet-card-link {
+    text-decoration: none;
 }
+
+
+
+
+
 
 
 /* Style for the overlay in gallery  */
@@ -622,7 +624,7 @@ label.required::after {
 #box3backgroundframe {
     flex-grow: 1; 
     width: 80%; 
-    max-width: 1200px; 
+    
     margin: 0 auto; 
     background-color: rgb(255, 255, 255);
     padding: 20px; 

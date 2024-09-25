@@ -59,3 +59,5 @@ $result = $conn->query($sql);
 <?php
 include('includes/footer.inc');
 ?>
+</body>
+</html>

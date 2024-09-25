@@ -50,10 +50,14 @@ $result = $conn->query($sql);
             </div>            
         </div>
     </div>
-    </main>
+    </body>
+</main>
+    
 <?php
 include('includes/footer.inc'); 
 ?>
-
 </body>
 </html>
+
+
+
