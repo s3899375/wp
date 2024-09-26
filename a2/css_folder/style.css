@@ -324,20 +324,18 @@ p.centered-text {
 
 .file-upload-container {
     display: flex;
-    align-items: center;
+    align-items: center; /* Align items vertically in the center */
 }
 
 .file-upload-container small {
-    margin-left: 10px; 
+    margin-left: 10px;
 }
-
-
 
 .clear {
     border: none;
     position: relative;
     border-radius: 20px;
-    background-color: #ffffff; 
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:darkblue;stop-opacity:1" /><stop offset="100%" style="stop-color:#008080;stop-opacity:1" /></linearGradient></defs><rect width="100%" height="100%" fill="url(#grad)" rx="20" ry="20"/></svg>') no-repeat center;
     color: #008080; 
     padding: 8px 35px; 
     font-size: 12px; 
@@ -345,39 +343,36 @@ p.centered-text {
     display: flex;
     align-items: center; 
     justify-content: center; 
-    gap: 5px; 
-    transition: box-shadow 0.3s ease; 
+    transition: box-shadow 0.3s ease, outline-color 0.3s ease; 
     overflow: hidden;
+    outline: 3px solid #008080; /* Idle outline color set to #008080 */
+    margin-left: 10px;
 }
 
-.clear::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 20px; 
-    padding: 2px; 
-    background: linear-gradient(345deg, darkblue 50%, #008080 50%); 
-    -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-    mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+/* Outline hover effect */
+.clear:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    outline-color: darkblue; /* Change to dark blue on hover */
 }
+
+/* Change outline color when active */
+.clear:active {
+    outline-color: #008080; /* Same color for outline when active */
+}
+
+
+
+
+
+
+
 
 .clear .material-symbols-outlined {
     font-size: 19px;
     color: inherit; 
 }
 
-.clear:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-}
+
 
 .material-symbols-outlined {
     font-variation-settings:
@@ -407,6 +402,7 @@ p.centered-text {
     justify-content: center;
     gap: 5px; 
     transition: box-shadow 0.3s ease;
+    margin-right: 20px;
 }
 
 .clear, .submit {
