@@ -3,7 +3,7 @@ $title = "Pet Details";
 include('includes/header.inc');
 include('includes/nav.inc');
 ?>
-<main>
+
     <div id="box2backgroundframe">
         <?php
         if (!empty($_GET['id'])) {
@@ -73,10 +73,7 @@ include('includes/nav.inc');
         }
         ?>
     </div>
-    </main>
+
 <?php
 include('includes/footer.inc');
 ?>
-
-</body>
-</html>
