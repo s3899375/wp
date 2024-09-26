@@ -518,7 +518,6 @@ label.required::after {
     background-color: #ffffff;
     padding: 10px;
     font-family: 'Ysabeau SC', sans-serif;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -620,6 +619,14 @@ a.pet-card-link {
 .pet-name h2{
     color: #35454f;;
 }
+
+    font-size: 20px;
+}
+
+.normal-text {
+    font-weight: normal;
+}
+
 
 #box3backgroundframe {
     flex-grow: 1; 
