@@ -32,7 +32,7 @@ $result = $conn->query($sql);
                 <div class='image-container'>
                     <img src='images/$petImage' alt='$petName'>
                     <div class='name-box'>
-                        <h3 class='normal-text' id='pet-name2' id='pet-name-$petId'>$petName</h3>            
+                        <h3 class='normal-text' id='pet-name-$petId'>$petName</h3>            
                     </div>
                     <div class='overlay'>
                         <span class='material-symbols-outlined'>search</span>
