@@ -324,11 +324,11 @@ p.centered-text {
 
 .file-upload-container {
     display: flex;
-    align-items: center; /* Align items vertically in the center */
+    align-items: center;
 }
 
 .file-upload-container small {
-    margin-left: 10px; /* Space between the input and the message */
+    margin-left: 10px; 
 }
 
 

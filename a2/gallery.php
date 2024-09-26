@@ -10,7 +10,7 @@ $result = $conn->query($sql);
 
 ?>
 
-<body class="gallery-page">
+
 <div id="box2backgroundframe">
     <div class="Gallery-Container">
         <h2>Pets Victoria has a lot to offer!</h2>
@@ -57,5 +57,4 @@ $result = $conn->query($sql);
 include('includes/footer.inc'); 
 ?>
 
-</body>
-</html>
+

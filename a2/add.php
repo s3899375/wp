@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-$title = "Add Pet"; // Set the title for the page
+$title = "Add Pet";
 include('includes/header.inc');
 include('includes/nav.inc');
 ?>
@@ -22,6 +20,7 @@ include('includes/nav.inc');
                 <option value="" disabled selected>Select an option</option>
                 <option value="Cat">Cat</option>
                 <option value="Dog">Dog</option>
+
             </select><br>
 
             <label for="petDescription" class="required">Description:</label>
@@ -56,6 +55,3 @@ include('includes/nav.inc');
 <?php
 include('includes/footer.inc');
 ?>
-
-</body>
-</html>
