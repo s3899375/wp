@@ -1,7 +1,7 @@
 html, body {
     height: 100%;
     width: 100%;
-    max-width: 1200px;
+
     margin: 0 auto; /* This centers the body */
     padding: 0;
     display: flex;
@@ -18,15 +18,40 @@ body {
     flex-direction: column;
 }
 
-#box1 {
-    width: 100%;
-    background-color: rgb(12, 128, 128);
-    margin: 0;
-    padding: 10px;
-    border-radius: 0 0 15px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.btn-outline-secondary:focus {
+    outline: none;          /* Remove outline */
+    box-shadow: none;      /* Remove any shadow effect */
+}
+
+/* Optional: If you want to style the button to be completely flat */
+.btn-outline-secondary {
+    border: none;          /* Remove border */
+    background: transparent; /* Make background transparent */
+}
+
+.custom-bg {
+    background-color: rgb(12, 128, 128) !important;
+  }
+  
+
+  .navbar-toggler {
+    border: none; 
+  }
+  
+  .navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+  }
+  
+  .navbar-nav .nav-link {
+    font-family: 'Ysabeau SC', sans-serif; 
+    font-size: 28px; 
+    color: #97bcbc; 
+    transition: color 0.3s; 
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: white; 
 }
 
 #box2backgroundframe {
@@ -41,9 +66,9 @@ body {
     width: 100%;
     background-color: rgb(229, 127, 61);
     padding: 10px;
-    
     text-align: center;
     border-radius: 15px 15px 0 0;
+    
 }
 
 .NAV-container {
@@ -67,10 +92,7 @@ body {
     height: 54px; 
     width: auto;
 }
-.search-container {
-    display: flex;
-    align-items: center;
-}
+
 .search-input {
     padding: 10px;
     border: 1px solid #ccc;
@@ -113,36 +135,76 @@ body {
     background-color: rgb(255, 247, 212);
 }
 
-#main-image {
-    float: right;
-    
-    height: auto;
-    max-width: 650px;
-    border-radius: 50%;
-    margin-top: 60px;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(110, 109, 109, 0.3);
-    margin-right: 20px;
-    margin-bottom: 30px;
+.indexpage {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
 }
 
+.searchinfodiv {
+    /* min-height: 30%; caused some errors */
+    background-color: #ffffff; 
+    padding: 20px;
+    box-sizing: border-box; 
+    margin: 20px auto; 
+    width: 80%;
+
+}
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    
+    padding-bottom: 10px;
+    margin: 0 auto;
+}
+
+.search-bar, .pet-type-dropdown, .search-button {
+    padding: 8px;
+    font-size: 12px; 
+    font-family: 'Ysabeau SC', sans-serif;  
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.search-bar {
+    flex: 7;
+}
+
+.pet-type-dropdown {
+    flex: 2;
+}
+
+.search-button {
+    flex: 1;
+    background-color: rgb(12, 128, 128);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: auto;
+}
+
+.search-button:hover {
+    background-color: rgb(9, 100, 100);
+}
+
+@media (max-width: 1200px) {
+    .search-container {
+        flex-direction: column;
+    }
+    .search-bar, .pet-type-dropdown{
+        flex: 1;
+        width: 100%;
+    }
+}
+
+
+
+
 /* Heading fonts */
-h1.home-page {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 4.1vw;
-    float: left; 
-    margin-top: 100px;
-    margin-left: 20px;
-    color: rgb(229, 127, 61);
-    text-align: center; 
-}
-h2.homepagetext {
-    margin-left: 20px;
-    font-size: 3.5vw;
-    float: left;
-    color: rgb(12, 128, 128);
-    margin-top: 0px;
-}
+
 
 
 h2, h3, h4, h5, h6 {
@@ -153,14 +215,86 @@ h2, h3, h4, h5, h6 {
     font-family: 'Material Icons';
     font-size: 24px; 
 }
+body {
+    margin: 0; /* Remove default margin */
+}
+
+.content-container {
+    display: flex; 
+    align-items: flex-start; 
+    padding: 20px; 
+    flex-wrap: wrap;
+    border-left: 50px;
+    width: 100%;
+    
+}
+
+.carousel-indicators {
+    background-color: #6b6b6b; /* Background color for the indicator bar */
+    padding: 5px 0; /* Optional: adds spacing above and below the indicators */
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    background-color: #000000; 
+    border: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0; 
+}
+
+.carousel-indicators .active {
+    background-color: #000000; 
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.6); 
+}
+
+.carousel-container {
+    flex: 1; 
+    margin-top: 25px; 
+    margin-left: 0px;
+    margin-right: 60px;
+    width: 500px;
+    margin-left: 100px;
+    height: auto;
+}
+
+.text-container {
+    flex: 1; 
+    margin-left: 75px; 
+}
+
+.carousel-inner {
+    min-height: 400px; 
+    overflow: hidden; 
+}
+
+.carousel-image {
+    width: 100%; 
+    height: 400px;
+    
+    object-fit: cover; 
+}
+
+h1.home-page {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4.5vw;
+    margin-top: 50px;
+    color: rgb(229, 127, 61);
+    text-align: left; /* Align text to the left */
+}
+
+h2.homepagetext {
+    margin-top: 0;
+    font-size: 3.5vw;
+    color: rgb(12, 128, 128);
+}
+
+
+
 
 /*generated by chatgpt \/\/\/\/*/
 
 @media (max-width: 762px) {
-    #main-image {
-        width: 40vw;
-        margin-right: 20px;
-    }
 
     .home-button img {
         height: 40px; 
@@ -169,63 +303,74 @@ h2, h3, h4, h5, h6 {
     .nav-select {
         width: 150px; 
     }
+
+    h1.home-page,
+    h2.homepagetext {
+        font-size: 6vw; 
+    }
+    .carousel-container {
+        padding: 5px; /* Adjust padding for smaller screens */
+    }
+    .text-container {
+        margin-right: 10px;
+    }
 }
 /*generated by chatgpt ^^^*/
 
 
-/* index.html css part*/
 
-.content-container {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-    align-items: flex-start; 
-}
 
+
+
+/*index.html^^^^^^^^^^^*/
 #petsimage {
-    flex: 1; /* Allows image to scale proportionally */
-    max-width: 100%; /* Ensures image is responsive */
-    height: auto; /* Maintain aspect ratio */
+    flex: 0 0 auto;
+    width: 500px; /* Fixed width */
+    height: auto; /* Maintains aspect ratio */
     margin-top: 40px;
+    margin-right: 20px; /* Space between the image and table */
 }
 
 #pet-table {
-    flex: 1; 
-    border-collapse: collapse; 
+    flex: 1;
+    border-collapse: collapse;
     font-family: 'Ysabeau SC', sans-serif;
-    border: 2px solid rgb(0, 0, 0);
-    box-sizing: border-box; 
+    border: 1px solid rgb(68, 68, 68);
+    box-sizing: border-box;
     margin-top: 40px;
+    width: 100%; 
+    max-width: 50%; 
+    margin-left: auto; 
+    margin-right: 0; 
 }
+
 
 #pet-table th, #pet-table td {
     padding: 8px;
     text-align: left;
+    border-bottom: 1px solid #4e4e4e; /* Add a bottom border to each cell */
+    border: 1px solid #ddd;
 }
 
 #pet-table th {
-    background-color: rgb(255, 247, 212);
+    background-color: rgb(255, 255, 255);
+    color: #000000;
 }
 
 #pettabletext {
     background-color: #008080;
 }
 
-#pet-table th {
-    color: #008080;
-}
 
-@media (max-width: 768px) {
-    #petsimage, #pet-table {
-        width: 100%; 
-    }
-}
+
 
 h2.petssubhead {
     text-align: center;
 }
 p.centered-text {
     text-align: center;
+    font-family: 'Ysabeau SC', sans-serif; /* Apply specified font */
+    font-size: 16px; 
 }
 
 /* Style for pet name links */

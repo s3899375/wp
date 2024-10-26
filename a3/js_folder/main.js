@@ -80,3 +80,24 @@ function autoResize(textarea) {
 
 
 document.getElementById('petDescription').addEventListener('input', validateDescription);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // Temporarily prevent page reload to test functionality
+            
+            // Reset all links to grey
+            navLinks.forEach(nav => {
+                nav.classList.remove('active');
+                nav.style.color = 'grey';
+            });
+
+            // Set clicked link to active and white
+            this.classList.add('active');
+            this.style.color = 'white';
+        });
+    });
+});
