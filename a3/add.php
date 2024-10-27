@@ -20,7 +20,6 @@ include('includes/nav.inc');
                 <option value="" disabled selected>Select an option</option>
                 <option value="Cat">Cat</option>
                 <option value="Dog">Dog</option>
-
             </select><br>
 
             <label for="petDescription" class="required">Description:</label>

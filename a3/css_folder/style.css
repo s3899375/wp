@@ -19,14 +19,14 @@ body {
 }
 
 .btn-outline-secondary:focus {
-    outline: none;          /* Remove outline */
-    box-shadow: none;      /* Remove any shadow effect */
+    outline: none;
+    box-shadow: none;
 }
 
 /* Optional: If you want to style the button to be completely flat */
 .btn-outline-secondary {
-    border: none;          /* Remove border */
-    background: transparent; /* Make background transparent */
+    border: none;          
+    background: transparent; 
 }
 
 .custom-bg {
@@ -47,6 +47,10 @@ body {
     font-size: 28px; 
     color: #97bcbc; 
     transition: color 0.3s; 
+}
+
+.navbar-nav .nav-item {
+    margin-right: 20px; 
 }
 
 
@@ -230,7 +234,7 @@ body {
 }
 
 .carousel-indicators {
-    background-color: #6b6b6b; /* Background color for the indicator bar */
+   
     padding: 5px 0; /* Optional: adds spacing above and below the indicators */
 }
 
@@ -325,10 +329,19 @@ h2.homepagetext {
 /*index.html^^^^^^^^^^^*/
 #petsimage {
     flex: 0 0 auto;
-    width: 500px; /* Fixed width */
-    height: auto; /* Maintains aspect ratio */
+    width: 500px;
+    height: auto; 
     margin-top: 40px;
-    margin-right: 20px; /* Space between the image and table */
+    margin-right: 20px; 
+    max-width: 100%; 
+}
+
+@media (max-width: 768px) {
+    #petsimage {
+        width: 100%;
+        margin-top: 20px;
+        margin-right: 0; 
+    }
 }
 
 #pet-table {
@@ -615,40 +628,51 @@ label.required::after {
     font-size: 16px;
     margin: 10px 0 20px;
 }
-/*these two are gallery texts and fonts above the gallery of pets avaliable*/
 
 .petcontainer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the images */
-    gap: 20px; /* Space between images */
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    gap: 20px 380px;
     margin: 0 auto; /* Centers the pet container */
     max-width: 100%; /* Ensure container doesn't exceed the width of its parent */
     padding: 0 10px; /* Add padding to ensure content doesn't touch edges */
 }
 
-/* this is the box that organises the images its inside of .gallarycontainer */
+/* Adjust gap for different screen sizes */
+@media (max-width: 1200px) { 
+    .petcontainer {
+        gap: 10px 100px; /* Adjusted for larger screens */
+    }
+}
+
+
+
+@media (max-width: 500px) { 
+    .petcontainer {
+        gap: 5px; /* Adjusted for smaller screens */
+    }
+}
+
 .image-container {
     position: relative;
-    flex: 1 1 350px; /* Grow and shrink as needed with a base width of 300px */
-    max-width: 310px; /* Ensure the container doesn't grow too large */
+    flex: 1 1 385px; /* Adjusted for a 10% increase in base width */
+    max-width: 341px; /* 10% increase from 310px */
     border-radius: 10px;
-    width: 310px;
-    height: 280px;
-    max-height: 240px;
+    width: 341px; /* 10% increase from 310px */
+    height: 308px; /* 10% increase from 280px */
+    max-height: 264px; /* 10% increase from 240px */
     overflow: hidden;
     border: 1px solid #a1b9be;
-    margin: 5px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-/* Ensure the image fills the container */
+/* Image styles */
 .image-container img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto; 
     display: block;
     transition: filter 0.3s ease;
 }
@@ -668,11 +692,11 @@ label.required::after {
 }
 
 
+
+
 a.pet-card-link {
     text-decoration: none;
 }
-
-
 
 
 
@@ -720,17 +744,43 @@ a.pet-card-link {
 
 /*this is the pets name box*/
 
+/*below is the details div*/
+
+
+.pet-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.edit-button, .delete-button {
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+.delete-button:hover, .edit-button:hover {
+    opacity: 0.9;
+}
 
 
 .DetailsImageDiv {
-    justify-content: center;   /* Horizontally center */
-    align-items: center;       /* Vertically center */
+    justify-content: center; /* Center the image */
+    align-items: center; /* Vertically center */
     text-align: center; 
     margin-top: 30px; 
     min-height: 250px;
     max-height: 250px;
-    
 }
+
 
 .DetailsImageDiv img {
       
@@ -753,6 +803,7 @@ a.pet-card-link {
 .info, .pet-name, .pet-description {
     width: 100%; 
     margin-top: 20px;
+    
     box-sizing: border-box; 
     text-align: center; 
 }
@@ -771,26 +822,22 @@ a.pet-card-link {
 
 
 #box3backgroundframe {
-    flex-grow: 1; 
-    width: 80%; 
-    
-    margin: 0 auto; 
+    display: flex; /* Use flexbox for layout */
+    width: 100%; /* Full width to utilize space */
     background-color: rgb(255, 255, 255);
     padding: 20px; 
-
-    box-sizing: border-box;
-    min-height: 0; 
+    box-sizing: border-box; /* Include padding in width calculations */
 }
 
 
 .pet-info {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 20px;
     text-align: center;
     align-items: center;
     gap: 30px; 
-    flex-wrap: wrap; 
+    flex-wrap: nowrap; 
 }
 
 .pet-info .info-item {
@@ -855,12 +902,51 @@ font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 font-size: 40px;
 }
 
-#error-message, #details-container {
+#error-message {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
+}
+
+.details-container {
+    display: flex; /* Align left and right sections horizontally */
+    width: 100%; /* Take full width */
+    padding: 0; /* Remove padding to hug the left wall */
+    margin: 0; /* Remove margin to hug the left wall */
+}
+
+.left-side {
+    flex: 0 0 auto; /* Allow the left side to size according to content */
+    width: auto; /* Keep natural width */
+    max-width: 250px; /* Optional: limit max width */
+    padding: 0; /* Remove padding to hug the left wall */
+    margin: 0; /* Remove margin to hug the left wall */
+}
+
+.right-side {
+    flex: 1; /* Allow right side to take the remaining space */
+    max-width: 50vw; /* Set max width to 50% of the viewport */
+    display: flex;
+    flex-direction: column; /* Stack name and description */
+    text-align: left; /* Align text to the left */
+    padding-left: 20px; /* Optional: add some padding for spacing */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    margin-left: auto; /* Push it to the right */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    #box3backgroundframe {
+        flex-direction: column; /* Stack left and right side vertically */
+    }
+
+    .left-side, .right-side {
+        width: 100%; /* Ensure both divs take full width */
+        max-width: none; /* Remove max-width restriction for stacking */
+        margin-left: 0; /* Reset margin */
+    }
 }
 
 #error-message p {
@@ -873,25 +959,154 @@ font-size: 40px;
 
 
 .petsdiv, .agediv, .location {
-width: 120px; 
+    width: 0px; 
 }
+
 @media (min-width: 1200px) {
-.pet-info {
-    justify-content: space-between; 
-    gap: 120px; 
-}
+    .pet-info {
+        justify-content: space-between; 
+        gap: 60px; /* Reduced gap */
+    }
 }
 
 @media (max-width: 768px) {
-.pet-info {
-    flex-direction: column; 
-    align-items: center; 
-    gap: 20px;
+    /* .pet-info {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px; /* Reduced gap */
+    } 
+
+    .info-section {
+        width: auto; 
+        margin: 10px 0; 
+        padding: 130px;
+    }
+
+/*above is the details div*/
+
+
+
+/* Styles for the login page */
+#box4backgroundframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-color: rgb(255, 255, 255);
+    flex-grow: 1;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box; 
 }
 
-.info-section {
-    width: auto; 
-    margin: 10px 0; 
-    padding: 130px;
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
 }
+
+.login-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.login-form p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.show-password {
+    cursor: pointer;
+    color: #0073b1;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.button:hover {
+    background-color: #005582; 
+}
+
+.forgot-password {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    color: #0073b1;
+    margin-bottom: 20px;
+}
+
+.sign-in-button {
+    background-color: rgb(12, 128, 128);
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-button {
+    background-color: rgb(12, 128, 128);
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.sign-in-button,
+.register-button {
+    background-color: rgb(12, 128, 128);
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.sign-in-button:hover,
+.register-button:hover {
+    background-color: rgb(10, 100, 100); /* Slightly darker shade on hover */
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+
+.new-to-site {
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+}
+
+.new-to-site a {
+    color: #0073b1;
 }
