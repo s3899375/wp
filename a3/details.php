@@ -51,7 +51,7 @@ include('includes/nav.inc');
 
                 if (isset($_SESSION['username'])) { // Check session variable for logged in user
                     echo "<div class='pet-actions'>";
-                    echo "<a href='edit.php?id={$petid}' class='edit-button'>Edit</a>";
+                    echo "<a href='edit.php?petid={$petid}' class='edit-button'>Edit</a>";
                     echo "<button class='delete-button' onclick='confirmDelete({$petid})'>Delete</button>";
                     echo "</div>";
                 }

@@ -1,5 +1,3 @@
-<?php?>
-
 <nav class="navbar navbar-expand-sm navbar-light custom-bg">
     <div class="container-fluid">
         <a href="index.php" class="navbar-brand">
@@ -37,8 +35,8 @@
                 <?php } ?>
             </ul>
 
-            <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Search">
+            <form class="d-flex" action="search.php" method="GET">
+                <input class="form-control me-2" type="text" name="query" placeholder="Search" required>
                 <button class="btn btn-outline-secondary" type="submit">
                     <span class="material-symbols-outlined">search</span>
                 </button>

@@ -73,6 +73,7 @@ function validateImageSize(input) {
 }
 
 
+
 function autoResize(textarea) {
     textarea.style.height = 'auto'; 
     textarea.style.height = `${Math.min(textarea.scrollHeight, 200)}px`; 
@@ -101,3 +102,61 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+    var errorMessage = "<?php echo addslashes($errorMessage); ?>";
+    var successMessage = "<?php echo addslashes($successMessage); ?>";
+
+
+    function showMessage() {
+        var modalBody = document.getElementById("modalBody");
+        var messageModal = new bootstrap.Modal(document.getElementById("messageModal"));
+
+        if (errorMessage) {
+            modalBody.innerHTML = "<div style='color: red;'>" + errorMessage + "</div>";
+        } else if (successMessage) {
+            modalBody.innerHTML = "<div style='color: green;'>" + successMessage + "</div>";
+        } else {
+            return; 
+        }
+        messageModal.show(); 
+    }
+
+    showMessage();
+
+
+    function togglePassword() {
+        const passwordField = document.getElementById('password');
+        const showPassword = document.querySelector('.show-password');
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            showPassword.textContent = "hide";
+        } else {
+            passwordField.type = "password";
+            showPassword.textContent = "show";
+        }
+    }
+    
+
+
+    function showLoginErrorModal() {
+        const errorMessage = document.getElementById('errorMessage').textContent;
+        if (errorMessage) {
+            const loginErrorModal = new bootstrap.Modal(document.getElementById('loginErrorModal'));
+            loginErrorModal.show();
+        }
+    }
+    
+
+    document.addEventListener('DOMContentLoaded', function() {
+        showLoginErrorModal();
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var errorMessage = "<?php echo $errorMessage; ?>"; 
+        if (errorMessage) {
+            var loginErrorModal = new bootstrap.Modal(document.getElementById('loginErrorModal'));
+            loginErrorModal.show();
+        }
+    });
+    
