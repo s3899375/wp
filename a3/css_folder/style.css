@@ -911,41 +911,40 @@ font-size: 40px;
 }
 
 .details-container {
-    display: flex; /* Align left and right sections horizontally */
-    width: 100%; /* Take full width */
-    padding: 0; /* Remove padding to hug the left wall */
-    margin: 0; /* Remove margin to hug the left wall */
+    display: flex; 
+    width: 100%; 
+    padding: 0; 
+    margin: 0; 
 }
 
 .left-side {
-    flex: 0 0 auto; /* Allow the left side to size according to content */
-    width: auto; /* Keep natural width */
-    max-width: 250px; /* Optional: limit max width */
-    padding: 0; /* Remove padding to hug the left wall */
-    margin: 0; /* Remove margin to hug the left wall */
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 250px;
+    padding: 0; 
+    margin: 0; 
 }
 
 .right-side {
-    flex: 1; /* Allow right side to take the remaining space */
-    max-width: 50vw; /* Set max width to 50% of the viewport */
+    flex: 1; 
+    max-width: 50vw;
     display: flex;
-    flex-direction: column; /* Stack name and description */
-    text-align: left; /* Align text to the left */
-    padding-left: 20px; /* Optional: add some padding for spacing */
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
-    margin-left: auto; /* Push it to the right */
+    flex-direction: column; 
+    text-align: left; 
+    padding-left: 20px; 
+    box-sizing: border-box; 
+    margin-left: auto; 
 }
 
-/* Media query for smaller screens */
+
 @media (max-width: 768px) {
     #box3backgroundframe {
-        flex-direction: column; /* Stack left and right side vertically */
+        flex-direction: column; 
     }
-
     .left-side, .right-side {
-        width: 100%; /* Ensure both divs take full width */
-        max-width: none; /* Remove max-width restriction for stacking */
-        margin-left: 0; /* Reset margin */
+        width: 100%; 
+        max-width: none; 
+        margin-left: 0; 
     }
 }
 
@@ -964,23 +963,29 @@ font-size: 40px;
 
 @media (min-width: 1200px) {
     .pet-info {
-        justify-content: space-between; 
-        gap: 60px; /* Reduced gap */
+        align-items: center; 
+        gap: 120px;
+    }
+    .info-section {
+        width: auto; 
+        margin: 10px 0; 
+        padding: 10px;
     }
 }
 
 @media (max-width: 768px) {
-    /* .pet-info {
-        flex-direction: column; 
+    .pet-info {
+ 
         align-items: center; 
-        gap: 10px; /* Reduced gap */
+        gap: 80px; 
     } 
 
     .info-section {
         width: auto; 
         margin: 10px 0; 
-        padding: 130px;
+        padding: 10px;
     }
+}
 
 /*above is the details div*/
 
@@ -992,7 +997,6 @@ font-size: 40px;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
     background-color: rgb(255, 255, 255);
     flex-grow: 1;
     position: relative;
@@ -1081,6 +1085,7 @@ font-size: 40px;
     font-size: 16px;
     cursor: pointer;
 }
+
 .sign-in-button,
 .register-button {
     background-color: rgb(12, 128, 128);
@@ -1099,7 +1104,6 @@ font-size: 40px;
     background-color: rgb(10, 100, 100); /* Slightly darker shade on hover */
     transform: scale(1.05); /* Slight zoom-in effect */
 }
-
 
 .new-to-site {
     font-size: 14px;
