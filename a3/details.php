@@ -1,8 +1,10 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $title = "Pet Details";
 include('includes/header.inc');
 include('includes/nav.inc');
-session_start(); 
 ?>
 <div id="box2backgroundframe">
     <?php
@@ -44,14 +46,10 @@ session_start();
                 echo "<div class='location'>";
                 echo "<span class='material-symbols-outlined'>location_on</span>";
                 echo "<p>{$row['location']}</p>";
-
-                
                 echo "</div>";
                 echo "</div>"; 
 
-                
-
-                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                if (isset($_SESSION['username'])) { // Check session variable for logged in user
                     echo "<div class='pet-actions'>";
                     echo "<a href='edit.php?id={$petid}' class='edit-button'>Edit</a>";
                     echo "<button class='delete-button' onclick='confirmDelete({$petid})'>Delete</button>";
@@ -70,9 +68,9 @@ session_start();
                 echo "</div>";
                 echo "</div>"; 
                 echo "</div>"; 
-                $stmt->close();
-                $conn->close();
             }
+            $stmt->close();
+            $conn->close();
         } else {
             echo "<div id='box3backgroundframe'>";
             echo "<h2>No details found for this pet.</h2>";

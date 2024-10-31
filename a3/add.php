@@ -1,5 +1,12 @@
 <?php
 $title = "Add Pet";
+session_start();
+
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.php");
+    exit; 
+}
 include('includes/header.inc');
 include('includes/nav.inc');
 ?>

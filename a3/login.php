@@ -2,9 +2,10 @@
 $title = "login"; 
 include('includes/header.inc');
 include('includes/nav.inc');
-include('includes/db_connect.inc'); // Fixed typo in 'include'
+include('includes/db_connect.inc');
 session_start(); 
 ?>
+
 <div id="box4backgroundframe">
     <div class="login-container">
         <div class="login-form">
@@ -20,10 +21,7 @@ session_start();
                     <input type="password" id="password" name="password" required>
                     <span class="show-password" onclick="togglePassword()">show</span>
                 </div>
-
                 <button type="submit" class="sign-in-button">Sign in</button>
-
-
             </form>
             <p class="new-to-site">New to Pets victoria? <a href="register.php">Join now</a></p>
         </div>

@@ -1,24 +1,36 @@
 <?php
 session_start();
-
 include("includes/db_connect.inc");
 
-$sql = "select * from users where username = ? and password = SHA(?)";
+// Check if the form has been submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Prepare and bind
+    $sql = "SELECT * FROM users WHERE username = ? AND password = SHA(?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $password);
 
-$stmt = $conn->prepare($sql);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-$stmt->bind_param("ss", $username, $password);
-$username = $_POST['username'];
-$password = $_POST['password'];
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-$stmt->execute();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['username'] = $username;  
+        $_SESSION['loggedin'] = true;       
+        echo "Login successful!"; 
+    } else {
+        $_SESSION['err'] =  "Login failed";
+    }
 
-$result = $stmt->get_result();
+    $stmt->close();
+    $conn->close();
+    
 
-
-if ($result->num_rows > 0) {
-    $_SESSION['username'] = $username;
+    header("Location: index.php");
+    exit(0);
+} else {
+    echo "Please submit the login form.";
 }
-$conn->close();
-header("Location:index.php");
-exit(0);
+?>

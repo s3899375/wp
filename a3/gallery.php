@@ -1,5 +1,8 @@
 <?php
 $title = "Pet gallery";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 include('includes/header.inc'); 
 include('includes/nav.inc'); 
 include('includes/db_connect.inc');  // Include the database connection
