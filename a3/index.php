@@ -8,6 +8,16 @@ include('includes/nav.inc');
 include('includes/db_connect.inc');  
 include('fetch_images.php'); 
 ?>
+
+<!-- Display the login banner only if the user is logged in and the banner hasn't been shown yet -->
+<?php if (!empty($_SESSION['username']) && empty($_SESSION['banner_displayed'])): ?>
+    <div class="login-banner">
+        <p>Login Successful</p>
+        <button class="close-banner" onclick="this.parentElement.style.display='none';">×</button>
+    </div>
+    <?php $_SESSION['banner_displayed'] = true; // Set flag to prevent showing again ?>
+<?php endif; ?>
+
 <div id="IndexPageDiv" class="indexpage">
     <div class="content-container">
         <div class="carousel-container">

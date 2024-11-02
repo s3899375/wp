@@ -22,7 +22,6 @@ $petAge = (float) validateInput($_POST['petAge']);
 $petLocation = validateInput($_POST['petLocation']);
 $imageCaption = validateInput($_POST['imageCaption']);
 
-// Handle image upload if a new one is provided
 $image = '';
 if (!empty($_FILES['imageUpload']['name'])) {
     $tmp = $_FILES['imageUpload']['tmp_name'];
@@ -38,10 +37,9 @@ if (!empty($_FILES['imageUpload']['name'])) {
 $sql = "INSERT INTO pets (petname, type, description, age, location, caption, image, username) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 if ($stmt = $conn->prepare($sql)) {
-    // Bind parameters
+
     $stmt->bind_param("sssdssss", $petName, $petType, $petDescription, $petAge, $petLocation, $imageCaption, $image, $_SESSION['username']);
-    
-    // Execute the statement
+
     if ($stmt->execute()) {
         header("Location: gallery.php?add=success");
         exit;

@@ -85,13 +85,8 @@ $stmt->close();
 $conn->close();
 ?>
 
-<script>
-    function confirmDelete(petId) {
-        if (confirm("Are you sure you want to delete this pet?")) {
-            window.location.href = "delete.php?id=" + petId;
-        }
-    }
-</script>
+<!-- Link to external JavaScript file -->
+<script src="js/scripts.js"></script>
 
 <?php
 include('includes/footer.inc');

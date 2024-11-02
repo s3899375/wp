@@ -1,14 +1,13 @@
 <?php
-$title = "Login"; 
+$title = "Login";
 include('includes/header.inc');
 include('includes/nav.inc');
 include('includes/db_connect.inc');
-session_start(); 
+session_start();
 
-
-$errorMessage = isset($_SESSION['err']) ? $_SESSION['err'] : '';
-
-unset($_SESSION['err']);
+// Initialize $errorMessage to an empty string if not set
+$errorMessage = isset($_SESSION['errorMessage']) ? $_SESSION['errorMessage'] : '';
+unset($_SESSION['errorMessage']);
 ?>
 
 <div id="box4backgroundframe">
@@ -33,19 +32,18 @@ unset($_SESSION['err']);
     </div>
 </div>
 
-<div class="modal" id="loginErrorModal" tabindex="-1" aria-labelledby="loginErrorModalLabel" aria-hidden="true">
+<!-- Add the data-error-message attribute here -->
+<div class="modal" id="loginErrorModal" data-error-message="<?php echo htmlspecialchars($errorMessage); ?>" tabindex="-1" aria-labelledby="loginErrorModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="loginErrorModalLabel">Login Error</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <?php
-                if ($errorMessage) {
-                    echo "<div style='color: red;'>$errorMessage</div>";
-                }
-                ?>
+            <div class="modal-body" id="modalErrorMessage">
+                <?php if ($errorMessage): ?>
+                    <div style='color: red;'><?php echo $errorMessage; ?></div>
+                <?php endif; ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -55,4 +53,3 @@ unset($_SESSION['err']);
 </div>
 
 <script src="js_folder/main.js"></script>
-
