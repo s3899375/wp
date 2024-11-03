@@ -22,14 +22,27 @@ $petAge = (float) validateInput($_POST['petAge']);
 $petLocation = validateInput($_POST['petLocation']);
 $imageCaption = validateInput($_POST['imageCaption']);
 
+// Handle image upload if a new one is provided
 $image = '';
 if (!empty($_FILES['imageUpload']['name'])) {
     $tmp = $_FILES['imageUpload']['tmp_name'];
     $image = $_FILES['imageUpload']['name'];
     $dest = "images/{$image}";
-    if (!move_uploaded_file($tmp, $dest)) {
+
+    // Debugging output
+    echo "Temporary file: {$tmp}<br>";
+    echo "Destination: {$dest}<br>";
+    if (!file_exists($tmp)) {
+        echo "Temporary file does not exist.<br>";
+    } else {
+        echo "Temporary file exists.<br>";
+    }
+
+    // Attempt to move the uploaded file
+    if (move_uploaded_file($tmp, $dest)) {
+        echo "File uploaded successfully.";
+    } else {
         echo "File upload failed.";
-        exit; 
     }
 }
 
@@ -37,9 +50,10 @@ if (!empty($_FILES['imageUpload']['name'])) {
 $sql = "INSERT INTO pets (petname, type, description, age, location, caption, image, username) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 if ($stmt = $conn->prepare($sql)) {
-
+    // Bind parameters
     $stmt->bind_param("sssdssss", $petName, $petType, $petDescription, $petAge, $petLocation, $imageCaption, $image, $_SESSION['username']);
-
+    
+    // Execute the statement
     if ($stmt->execute()) {
         header("Location: gallery.php?add=success");
         exit;
