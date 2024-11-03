@@ -128,7 +128,29 @@ body {
 }
 /*frame of the webpages*/
 
+.login-banner {
+    background-color: #e0f4e3;
+    color: #646464;
+    padding: 10px;
+    
+    font-weight: bold;
+    position: relative; /* or use `absolute` if you want it on top of other elements */
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
 
+.login-banner .close-banner {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/*login banner code*/
 
 #IndexPageDiv{
     background-color: rgb(252, 249, 236);
@@ -698,6 +720,22 @@ a.pet-card-link {
     text-decoration: none;
 }
 
+.filter-container {
+    display: flex;                    
+    align-items: center;              
+    justify-content: space-between;   
+    width: 100%;                      
+    margin: 20px 0;                  
+}
+
+#petFilter {
+    flex: 1;                         
+    padding: 10px;                   
+    font-size: 16px;                 
+    border: 1px solid #ccc;         
+    border-radius: 5px;             
+    margin-right: 10px;            
+}
 
 
 
@@ -897,7 +935,7 @@ align-items: center;
 justify-content: center;
 flex-direction: column;
 text-align: center;
-color: #008080;
+color: #35454f;
 font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 font-size: 40px;
 }
