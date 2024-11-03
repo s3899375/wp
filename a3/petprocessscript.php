@@ -18,20 +18,23 @@ $petLocation = validateInput($_POST['petLocation']);
 $imagePath = null;
 
 if (isset($_FILES['imageUpload'])) {
+    // Check for upload errors
     if ($_FILES['imageUpload']['error'] !== UPLOAD_ERR_OK) {
         echo "File upload error: " . $_FILES['imageUpload']['error'];
-        exit;
+        exit; // Stop execution if there's an error
     }
 
+    // Prepare the upload directory
     $uploadDir = 'images/';
-    $imageFileName = basename($_FILES['imageUpload']['name']); 
-    $imagePath = $uploadDir . $imageFileName;
+    $imageFileName = basename($_FILES['imageUpload']['name']); // Get just the file name
+    $imagePath = $uploadDir . $imageFileName; // Full path for upload
 
+    // Attempt to move the uploaded file
     if (move_uploaded_file($_FILES['imageUpload']['tmp_name'], $imagePath)) {
         echo "File uploaded successfully to: {$imagePath}";
     } else {
         echo "Failed to move the uploaded file.";
-        exit; 
+        exit; // Stop execution if the file could not be moved
     }
 }
 
@@ -40,7 +43,7 @@ if ($imagePath) {
     // Use only the file name for database storage
     $sql = "UPDATE pets SET petname = ?, type = ?, description = ?, caption = ?, age = ?, location = ?, image = ? WHERE petid = ? AND username = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssissis", $petName, $petType, $petDescription, $imageCaption, $petAge, $petLocation, $imageFileName, $petId, $_SESSION['username']);
+    $stmt->bind_param("ssssissis", $petName, $petType, $petDescription, $imageCaption, $petAge, $petLocation, $imageFileName, $petId, $_SESSION['username']); // Use $imageFileName here
 } else {
     // Update SQL query without image
     $sql = "UPDATE pets SET petname = ?, type = ?, description = ?, caption = ?, age = ?, location = ? WHERE petid = ? AND username = ?";
@@ -48,7 +51,7 @@ if ($imagePath) {
     $stmt->bind_param("ssssisis", $petName, $petType, $petDescription, $imageCaption, $petAge, $petLocation, $petId, $_SESSION['username']);
 }
 
-
+// Execute the statement and handle the result
 if ($stmt->execute()) {
     header("Location: index.php?update=success");
     exit;
