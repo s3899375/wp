@@ -1,8 +1,12 @@
+
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+$title = "Pet delete";
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.php");
+    exit; 
 }
-$title = "Pet Details";
 include('includes/header.inc');
 include('includes/nav.inc');
 
