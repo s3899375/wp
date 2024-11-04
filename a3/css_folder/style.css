@@ -1304,5 +1304,6 @@ font-size: 40px;
         margin-right: 0; /* Remove right margin for stacked layout */
         margin-bottom: 20px; /* Add space between stacked divs */
         max-width: 100%;
+        text-align: center;
     }
 }
