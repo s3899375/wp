@@ -1264,3 +1264,45 @@ font-size: 40px;
     font-size: 16px;
     margin: 10px 0 20px;
 }
+
+
+
+#detailsbackgroundframe {
+    display: flex; 
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+.detailsleft-side {
+    flex: 0 0 auto;
+    width: auto;
+    /* max-width: 250px; */
+    padding: 0; 
+    margin: 0; 
+}
+
+.detailsright-side {
+    flex: 1; 
+    max-width: 50%;
+    display: flex;
+    flex-direction: column; 
+    text-align: left; 
+    padding-left: 20px; 
+    box-sizing: border-box; 
+    margin-left: auto; 
+}
+
+@media (max-width: 786px) {
+    #detailsbackgroundframe {
+        flex-direction: column; /* Stack the divs vertically */
+    }
+
+    .detailsleft-side,
+    .detailsright-side {
+        margin-right: 0; /* Remove right margin for stacked layout */
+        margin-bottom: 20px; /* Add space between stacked divs */
+        max-width: 100%;
+    }
+}

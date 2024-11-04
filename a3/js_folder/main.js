@@ -120,11 +120,10 @@ function filterPets() {
     });
 }
 
-
 // scripts.js
 
 function confirmDelete(petId) {
     if (confirm("Are you sure you want to delete this pet?")) {
-        window.location.href = "delete.php?id=" + petId;
+        window.location.href = "deletescript.php?id={$petid}"
     }
 }

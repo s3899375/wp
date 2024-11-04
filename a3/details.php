@@ -21,9 +21,9 @@ include('includes/nav.inc');
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<div id='box3backgroundframe'>";
+                echo "<div id='detailsbackgroundframe'>";
 
-                echo "<div class='left-side'>"; 
+                echo "<div class='detailsleft-side'>"; 
                 echo "<div class='DetailsImageDiv'>";
                 if (!empty($row['image'])) {
                     echo "<img src='images/{$row['image']}' alt='{$row['petname']}'>";
@@ -58,7 +58,7 @@ include('includes/nav.inc');
 
                 echo "</div>"; 
 
-                echo "<div class='right-side'>"; 
+                echo "<div class='detailsright-side'>"; 
                 echo "<div class='pet-name'>";
                 echo "<h2>{$row['petname']}</h2>";
                 echo "</div>";
