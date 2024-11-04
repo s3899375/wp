@@ -15,7 +15,7 @@ include('fetch_images.php');
         <p>Login Successful</p>
         <button class="close-banner" onclick="this.parentElement.style.display='none';">×</button>
     </div>
-    <?php $_SESSION['banner_displayed'] = true; / ?>
+    <?php $_SESSION['banner_displayed'] = true; ?>
 <?php endif; ?>
 
 <div id="IndexPageDiv" class="indexpage">
