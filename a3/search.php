@@ -42,10 +42,10 @@ echo "<h2>Search Results</h2>";
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<div id='box3backgroundframe'>";
+        echo "<div class='searchbackgroundframe'>";
 
         // Left Side (Image and Info)
-        echo "<div class='left-side'>";
+        echo "<div class='searchleft-side '>";
         echo "<div class='DetailsImageDiv'>";
         if (!empty($row['image'])) {
             echo "<img src='images/{$row['image']}' alt='" . htmlspecialchars($row['petname']) . "'>";

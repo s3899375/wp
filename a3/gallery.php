@@ -26,11 +26,10 @@ $conn->close();  // Close the database connection
         <h2>Pets Victoria has a lot to offer!</h2>
         <p>For almost two decades, Pets Victoria has helped in creating true social change by bringing pet adoption into the mainstream. Our work has helped make a difference to the Victorian rescue community and thousands of pets in need of rescue and rehabilitation. But, until every pet is safe, respected, and loved, we all still have big, hairy work to do.</p>
 
-        <!-- Dropdown for filtering pets -->
         <div class="filter-container">
-            <!-- <label for="petFilter" class="sr-only">Filter by Pet Type</label> -->
+
             <select id="petFilter" onchange="filterPets()" aria-label="Filter by Pet Type">
-                <option value="all" disabled selected>Select type</option> <!-- Default disabled option -->
+                <option value="all" disabled selected>Select type</option>
                 <option value="all">All</option>
                 <option value="Cat">Cat</option>
                 <option value="Dog">Dog</option>
@@ -71,8 +70,6 @@ $conn->close();  // Close the database connection
     </div>
 </div>
 
-<!-- Include the external JavaScript file -->
-<script src="js_folder/main.js"></script>
 
 <?php
 include('includes/footer.inc'); 

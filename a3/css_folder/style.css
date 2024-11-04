@@ -132,9 +132,8 @@ body {
     background-color: #e0f4e3;
     color: #646464;
     padding: 10px;
-    
     font-weight: bold;
-    position: relative; /* or use `absolute` if you want it on top of other elements */
+    position: relative;
     top: 0;
     width: 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
@@ -541,12 +540,6 @@ p.centered-text {
 }
 
 
-
-
-
-
-
-
 .clear .material-symbols-outlined {
     font-size: 19px;
     color: inherit; 
@@ -669,11 +662,7 @@ label.required::after {
 
 
 
-@media (max-width: 500px) { 
-    .petcontainer {
-        gap: 5px; /* Adjusted for smaller screens */
-    }
-}
+
 
 .image-container {
     position: relative;
@@ -860,21 +849,58 @@ a.pet-card-link {
 
 
 #box3backgroundframe {
-    display: flex; /* Use flexbox for layout */
-    width: 100%; /* Full width to utilize space */
+    display: flex; 
+    width: 100%;
     background-color: rgb(255, 255, 255);
     padding: 20px; 
-    box-sizing: border-box; /* Include padding in width calculations */
+    box-sizing: border-box; 
 }
 
+
+#parentdeletebackgroundframe {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    flex-grow: 1;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box; 
+
+}
+
+
+#deletebackgroundframe {
+    gap: 20px;
+    text-align: left;
+    width: 80%;
+
+}
+
+.searchbackgroundframe {
+    display: flex; 
+    width: 100%; 
+    background-color: rgb(255, 255, 255);
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+
+.userbackgroundframe {
+    display: flex; 
+    width: 100%; 
+    background-color: rgb(255, 255, 255);
+    padding: 20px; 
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
 
 .pet-info {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    text-align: center;
+    text-align: left;
     align-items: center;
-    gap: 30px; 
+    gap: 80px; 
     flex-wrap: nowrap; 
 }
 
@@ -955,7 +981,8 @@ font-size: 40px;
     margin: 0; 
 }
 
-.left-side {
+
+.searchleft-side {
     flex: 0 0 auto;
     width: auto;
     max-width: 250px;
@@ -964,6 +991,37 @@ font-size: 40px;
 }
 
 .right-side {
+    flex: 1; 
+    max-width: 50%;
+    display: flex;
+    flex-direction: column; 
+    text-align: left; 
+    padding-left: 20px; 
+    box-sizing: border-box; 
+    margin-left: auto; 
+}
+
+@media (max-width: 768px) {
+    .searchbackgroundframe {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .searchleft-side,
+    .right-side {
+        max-width: 100%; 
+        text-align: center;
+    }
+}
+
+.left-side {
+    flex: 0 0 auto;
+    width: auto;
+    /* max-width: 250px; */
+    padding: 0; 
+    margin: 0; 
+}
+
+.userright-side {
     flex: 1; 
     max-width: 50vw;
     display: flex;
@@ -975,8 +1033,21 @@ font-size: 40px;
 }
 
 
+
 @media (max-width: 768px) {
-    #box3backgroundframe {
+    .userbackgroundframe {
+        flex-direction: column; 
+    }
+    .left-side, .userright-side  {
+        width: 100%; 
+        max-width: none; 
+        margin-left: 0; 
+    }
+}
+
+/* 
+@media (min-width: 768px) {
+    .userbackgroundframe {
         flex-direction: column; 
     }
     .left-side, .right-side {
@@ -984,7 +1055,8 @@ font-size: 40px;
         max-width: none; 
         margin-left: 0; 
     }
-}
+} */ */
+
 
 #error-message p {
     background-color: #f8d7da;
@@ -999,17 +1071,7 @@ font-size: 40px;
     width: 0px; 
 }
 
-@media (min-width: 1200px) {
-    .pet-info {
-        align-items: center; 
-        gap: 120px;
-    }
-    .info-section {
-        width: auto; 
-        margin: 10px 0; 
-        padding: 10px;
-    }
-}
+
 
 @media (max-width: 768px) {
     .pet-info {
@@ -1151,4 +1213,54 @@ font-size: 40px;
 
 .new-to-site a {
     color: #0073b1;
+}
+
+.deletebanner {
+    background-color: #e0f4e3;
+    color: #646464;
+    padding: 10px;
+    font-weight: bold;
+    position: relative; /* or use `absolute` if you want it on top of other elements */
+    top: 0;
+    align-items: center;       /* Centers vertically */
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;  
+}
+
+.deleteaddmore-container {
+    position: relative;
+    flex: 1 1 385px; /* Adjusted for a 10% increase in base width */
+    max-width: 341px; /* 10% increase from 310px */
+    border-radius: 10px;
+    width: 341px; /* 10% increase from 310px */
+    height: 308px; /* 10% increase from 280px */
+    max-height: 264px; /* 10% increase from 240px */
+    overflow: hidden;
+    border: 1px solid #a1b9be;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.addpet-card-link {
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    box-sizing: border-box;
+    text-decoration: none; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.addmorediv {
+    width: 341px;
+    height: 264px;
+}
+
+#deletebackgroundframe p {
+    font-family: 'Ysabeau SC', sans-serif; 
+    font-size: 16px;
+    margin: 10px 0 20px;
 }

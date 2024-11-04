@@ -25,7 +25,7 @@ echo "<h2>" . htmlspecialchars($username) . "'s Collection</h2>";
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<div id='box3backgroundframe'>";
+        echo "<div class='userbackgroundframe'>";
 
         // Left Side (Image and Info)
         echo "<div class='left-side'>";
@@ -57,13 +57,14 @@ if ($result->num_rows > 0) {
         // Edit and Delete Actions
         echo "<div class='pet-actions'>";
         echo "<a href='edit.php?petid={$row['petid']}' class='edit-button'>Edit</a>";
-        echo "<button class='delete-button' onclick='confirmDelete({$row['petid']})'>Delete</button>";
+        // Updated delete link to use the correct petid from the current row
+        echo "<a href='deletescript.php?id={$row['petid']}' class='delete-button' onclick='return confirm(\"Are you sure you want to delete this pet?\")'>Delete</a>";
         echo "</div>";
         
         echo "</div>"; // End Left Side
 
         // Right Side (Name and Description)
-        echo "<div class='right-side'>";
+        echo "<div class='userright-side'>";
         echo "<div class='pet-name'>";
         echo "<h2>" . htmlspecialchars($row['petname']) . "</h2>";
         echo "</div>";
@@ -84,9 +85,6 @@ echo "</div>"; // End box2backgroundframe
 $stmt->close();
 $conn->close();
 ?>
-
-<!-- Link to external JavaScript file -->
-<script src="js/scripts.js"></script>
 
 <?php
 include('includes/footer.inc');
