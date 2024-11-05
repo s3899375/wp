@@ -1045,17 +1045,7 @@ font-size: 40px;
     }
 }
 
-/* 
-@media (min-width: 768px) {
-    .userbackgroundframe {
-        flex-direction: column; 
-    }
-    .left-side, .right-side {
-        width: 100%; 
-        max-width: none; 
-        margin-left: 0; 
-    }
-} */ */
+
 
 
 #error-message p {
@@ -1304,6 +1294,6 @@ font-size: 40px;
         margin-right: 0; /* Remove right margin for stacked layout */
         margin-bottom: 20px; /* Add space between stacked divs */
         max-width: 100%;
-        text-align: center;
+        
     }
 }
