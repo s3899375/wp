@@ -15,43 +15,42 @@ $imageCaption = validateInput($_POST['imageCaption']);
 $petAge = (float)validateInput($_POST['petAge']);
 $petLocation = validateInput($_POST['petLocation']);
 
-$imagePath = null;
 
-if (isset($_FILES['imageUpload'])) {
-    // Check for upload errors
-    if ($_FILES['imageUpload']['error'] !== UPLOAD_ERR_OK) {
-        echo "File upload error: " . $_FILES['imageUpload']['error'];
-        exit; // Stop execution if there's an error
-    }
+$imageFileName = null;
+if (isset($_FILES['imageUpload']) && $_FILES['imageUpload']['error'] === UPLOAD_ERR_OK) {
 
-    // Prepare the upload directory
     $uploadDir = 'images/';
-    $imageFileName = basename($_FILES['imageUpload']['name']); // Get just the file name
-    $imagePath = $uploadDir . $imageFileName; // Full path for upload
+    $imageFileName = basename($_FILES['imageUpload']['name']); 
+    $imagePath = $uploadDir . $imageFileName; 
 
-    // Attempt to move the uploaded file
-    if (move_uploaded_file($_FILES['imageUpload']['tmp_name'], $imagePath)) {
-        echo "File uploaded successfully to: {$imagePath}";
-    } else {
+    if (!move_uploaded_file($_FILES['imageUpload']['tmp_name'], $imagePath)) {
         echo "Failed to move the uploaded file.";
-        exit; // Stop execution if the file could not be moved
+        exit; 
     }
-}
-
-// Prepare SQL query
-if ($imagePath) {
-    // Use only the file name for database storage
-    $sql = "UPDATE pets SET petname = ?, type = ?, description = ?, caption = ?, age = ?, location = ?, image = ? WHERE petid = ? AND username = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssissis", $petName, $petType, $petDescription, $imageCaption, $petAge, $petLocation, $imageFileName, $petId, $_SESSION['username']); // Use $imageFileName here
 } else {
-    // Update SQL query without image
-    $sql = "UPDATE pets SET petname = ?, type = ?, description = ?, caption = ?, age = ?, location = ? WHERE petid = ? AND username = ?";
+
+    $sql = "SELECT image FROM pets WHERE petid = ? AND username = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssisis", $petName, $petType, $petDescription, $imageCaption, $petAge, $petLocation, $petId, $_SESSION['username']);
+    $stmt->bind_param("is", $petId, $_SESSION['username']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 1) {
+        $pet = $result->fetch_assoc();
+        $imageFileName = $pet['image'];
+    } else {
+        echo "Pet not found or you don't have permission to edit this pet.";
+        exit;
+    }
+
+    $stmt->close();
 }
 
-// Execute the statement and handle the result
+$sql = "UPDATE pets SET petname = ?, type = ?, description = ?, caption = ?, age = ?, location = ?, image = ? WHERE petid = ? AND username = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ssssissis", $petName, $petType, $petDescription, $imageCaption, $petAge, $petLocation, $imageFileName, $petId, $_SESSION['username']);
+
+
 if ($stmt->execute()) {
     header("Location: index.php?update=success");
     exit;
